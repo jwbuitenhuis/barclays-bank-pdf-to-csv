@@ -11,7 +11,7 @@ if(!pdfFolder) {
 fs.readdir(pdfFolder, function(err, files) {
     var pdfs = files.filter(function(fileName) {
         // check file extension is 'pdf'
-        return fileName.substring(fileName.length-4) === '.pdf';
+        return fileName.substring(fileName.length-4).toLowerCase() === '.pdf';
     }).map(function(fileName) {
         // put the correct path in so parsePDFStatement can find it
         return path.join(pdfFolder,fileName);
